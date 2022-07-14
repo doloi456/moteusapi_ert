@@ -1,11 +1,16 @@
-#include <moteusapi/MoteusAPI.h>
+#include <moteusapi/MoteusAPI_ERT.h>
+//#include <moteusapi/MoteusAPI.h>
+
+// The API is declared as a global variable in moteusAPI_ert.cpp
+
 
 int main() {
-  // replace /dev/tty.usbmodemBE6118CD1 with your own usbcan dev name
-  string dev_name("/dev/tty.usbmodemBE6118CD1");
-  int moteus_id = 1;
-  MoteusAPI api(dev_name, moteus_id);
-
+  
+  // Insert your own usbcan dev name
+  // With one motor, the default value of ID is 1
+  // api.MoteusAPI_init("/dev/ttyACM0", 1);
+  /*
+  
   // define a state object
   State curr_state;
 
@@ -24,6 +29,6 @@ int main() {
   cout << "velocity: " << curr_state.velocity << endl;
   cout << "torque: " << curr_state.torque << endl;
   cout << "temperature: " << curr_state.temperature << endl;
-
+  */
   return 0;
 }
