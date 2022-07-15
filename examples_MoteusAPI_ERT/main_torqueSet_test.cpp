@@ -5,11 +5,7 @@ int main() {
   // With one motor, the default value of ID is 1
 
   MoteusAPI_ERT_init("/dev/ttyACM0", 1);
-  double stop_position = 0;
-  double velocity = 0.5;
-  double max_torque = 0.1;
-  setPosition(stop_position, velocity, max_torque);
+  setTorque(0.1);
 
   return 0;
 }
-
