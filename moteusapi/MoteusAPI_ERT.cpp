@@ -21,6 +21,7 @@
 // Declaration of the global pointer to the API to be initialized
 std::unique_ptr<MoteusAPI> apiPtr;
 
+
 void MoteusAPI_ERT_init(const char *port, int32_T moteus_id) {
     auto port_string = std::string(port); // Recast type from MATLAB type to string
     apiPtr = std::make_unique<MoteusAPI>(port_string, moteus_id);
@@ -43,7 +44,6 @@ void setPosition(real64_T stopPosition, real64_T velocity,  real64_T maxTorque) 
 // void readSpeed() {
 //   apiPtr->ReadState(curr_state.EN_Position());
 // };
-
 
 
 void MoteusAPI_Terminate() {

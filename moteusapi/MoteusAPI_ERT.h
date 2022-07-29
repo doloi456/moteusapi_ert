@@ -17,23 +17,40 @@
 #define MOTEUSAPI_ERT_H__
 
 
-#include "rtwtypes.h"
-
+#include "rtwtypes.h" // Matlab Types
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-
+/**
+ * Initialize the MoteusAPI by opening the device port for communication.
+ * @param port port name
+ * @param moteus_id ID of the connected Moteus Driver.
+*/
 void MoteusAPI_ERT_init(const char *port, int32_T moteus_id);
 
+/**
+ * Set the torque on a motor
+ * @param torque value of the torque. 
+*/
 void setTorque(real64_T torque);
 
+/**
+ * Stop the motion of the motor 
+*/
 void setStop();
 
+/**
+ * Terminate the Moteus API (closing the port)
+*/
 void MoteusAPI_Terminate();
 
+/**
+ * Set the end position of the motor
+ * TODO: insert parameters
+*/
 void setPosition(real64_T stopPosition, real64_T velocity,  real64_T maxTorque);
 
 // void readSpeed();
