@@ -3,9 +3,9 @@ Wrapper for the *"C++ API for Moteus BLDC controller"* for Embedded Coder Target
 - Author: Loi Do, doloi@fel.cvut.cz
 
 This is a **wrapper** for the API <https://github.com/sinaaghli/moteusapi> (see information below) so the API can be used with the **ERT** Library <https://github.com/aa4cc/ert_linux>. 
-
 The ERT library allows to generate a code from a **Simulink block diagram** that runs in real-time on Linux machine.
-The **Moteus API** is included into the Simulink diagram through a **System Objects** block <https://www.mathworks.com/help/matlab/system-objects.html>. 
+
+The **Moteus API** is included into the Simulink diagram through a **System Objects** block <https://www.mathworks.com/help/matlab/system-objects.html>.  
 
 - In the folder **./moteusapi/**, there are three additional files (compared to the original repository):
     - MoteusAPI_ERT.cpp
@@ -16,16 +16,31 @@ The **Moteus API** is included into the Simulink diagram through a **System Obje
     The third file allows using Matlab data types.
 
 
-# Instructions
+# Application
+Our application of this wrapper is to have the Moteus driver connected to a microcomputer with Linux OS (e.g. Raspberry Pi) while the (feedback) control is designed in Matlab/Simulink running on a desktop Linux machine.
+
+## Moteus API
 - First, follow the instructions for the C++ API and make sure, that the API is working.
 
 - Build and try the examples in the folder [examples_MoteusAPI_ERT](examples_MoteusAPI_ERT/).
+    - The project can be build by the same commands as the original C++ API:
 
+            > cd build
+            > cmake ..
+            > make
+    - To run one of the examples:
+
+            > sudo ./examples_MoteusAPI_ERT/main_torqueSet_test
+
+## ERT Linux
+- Follow the instructions at <https://github.com/aa4cc/ert_linux> and <https://gitlab.fel.cvut.cz/aa4cc/how-to/how-to-use-ert-linux-package>
+
+## Combining the libraries
 - Copy the folder into the Matlab path.
     - **Important note**: do not include the file **rtwtypes.h**. The header file is in the folder only for the examples. Matlab has its own **rtwtypes.h** in a path.
 
 - Write a *m-file* for the **System Objects** block. 
-
+    - 
 
 C++ API for Moteus BLDC controller through fdcanusb
 =====================
